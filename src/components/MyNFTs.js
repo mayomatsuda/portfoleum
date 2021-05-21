@@ -1,6 +1,6 @@
 import NFT from "./NFT"
 
-const MyNFTs = ({ nftList }) => {
+const MyNFTs = ({ nftList, dragHandler }) => {
 
     var list1 = [];
     var list2 = [];
@@ -27,6 +27,7 @@ const MyNFTs = ({ nftList }) => {
                             id={nft['tokenID']}
                             tokenname={nft['tokenName']}
                             tokensymbol={nft['tokenSymbol']}
+                            dragHandler={dragHandler}
                         />
                     ))}
                 </div>
@@ -37,6 +38,7 @@ const MyNFTs = ({ nftList }) => {
                             id={nft['tokenID']}
                             tokenname={nft['tokenName']}
                             tokensymbol={nft['tokenSymbol']}
+                            dragHandler={dragHandler}
                         />
                     ))}
                 </div>
