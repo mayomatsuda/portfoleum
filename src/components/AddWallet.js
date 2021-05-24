@@ -19,7 +19,7 @@ const AddTask = ({ onAdd }) => {
                 <input type ='text' placeholder='Wallet address' value={address} onChange={(e) => setAddress(e.target.value)} />
             </div>
 
-            <input type='submit' value='Save' className='btn btn-block'/>
+            <input type='submit' value='Submit' className='btn btn-block'/>
         </form>
     )
 }

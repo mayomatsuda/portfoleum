@@ -1,7 +1,7 @@
 const Wallet = async ({ address }) => {
     var Web3 = require('web3');
-    var apiUrl = "https://mainnet.infura.io/v3/a7baf100c77848de8fd81fec9c2a0033";
-    var web3 = new Web3(apiUrl);
+    // var apiUrl = "https://mainnet.infura.io/v3/a7baf100c77848de8fd81fec9c2a0033";
+    // var web3 = new Web3(apiUrl);
     var abi = [
         {
             'inputs': [{ 'internalType': 'address', 'name': 'owner', 'type': 'address' }],
@@ -39,8 +39,6 @@ const Wallet = async ({ address }) => {
     var url = `https://api.etherscan.io/api?module=account&action=tokennfttx&address=${address}&startblock=0&endblock=999999999&sort=asc&apikey=Y79P7CN6NZIP6JPNU4MVFQQDIXF1F8FNIW`
     var data;
 
-    var cryptoKitties = "0x06012c8cf97BEaD5deAe237070F9587f8E7A266d";
-
     async function fetchAsync() {
         let response = await fetch(url);
         let data = await response.json();
@@ -57,7 +55,8 @@ const Wallet = async ({ address }) => {
                         'tokenID': data[element]['tokenID'],
                         'tokenName': data[element]['tokenName'],
                         'tokenSymbol': data[element]['tokenSymbol'],
-                        'from': data[element]['from']
+                        'from': data[element]['from'],
+                        'imageUrl': undefined,
                     }
                 );
         }
@@ -74,7 +73,8 @@ const Wallet = async ({ address }) => {
                     'tokenID': data[element]['tokenID'],
                     'tokenName': data[element]['tokenName'],
                     'tokenSymbol': data[element]['tokenSymbol'],
-                    'to': data[element]['to']
+                    'to': data[element]['to'],
+                    'imageUrl': undefined,
                 }
             );
         }
@@ -111,7 +111,6 @@ const Wallet = async ({ address }) => {
         }
         return true;
     }
-    console.log(to);
     return await (to.filter(x => isIn(x)));
     // return await verifyToTransactions(cryptoKitties);
 }

@@ -72,7 +72,8 @@ body {
 }
 
 .add-form {
-  margin-bottom: 40px;
+  width: 25%;
+  margin: auto;
 }
 
 .form-control {
@@ -117,23 +118,20 @@ footer {
   height: 80%;
   padding: 5px 10px 10px 10px;
   border-radius: 10px;
-  display: inline-block;
 }
 
 .mynfts {
   width: 25%;
   margin-left: 30px;
-  height: 80%;
+  height: 650px;
   padding: 5px 10px 10px 10px;
-  border-radius: 10px;
-  display: inline-block;
 }
 
 .nft {
   width: 150px;
   height: 150px;
-  background: rgb(255, 255, 255);
-  margin: 25px auto;
+  /* cursor: pointer; */
+  /* background: rgb(255, 255, 255); */
 }
 
 .nftcols {
@@ -143,6 +141,7 @@ footer {
 .rowC {
   display:flex;
   flex-direction:row;
+  height: 100px;
 }
 
 .col {
@@ -153,8 +152,8 @@ footer {
 
 .pcol {
   width: 150px;
+  height: 150px;
   display: inline-block;
-  margin: 25px auto;
 }
 
 .prow {
@@ -166,5 +165,10 @@ footer {
   width: 100px;
   height: 100px;
   border: 1px dotted steelblue;
-  margin: 0 auto;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.arrow {
+  margin: auto;
 }
