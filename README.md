@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Portfoleum
 
-React web app giving users the ability to create their own NFT portfolio using any Ethereum wallet.
+Portfoleum is a React web app giving users the ability to create their own NFT portfolio using any Ethereum wallet.
 
 # Getting Started with Create React App
 
