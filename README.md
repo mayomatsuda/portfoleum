@@ -1,5 +1,9 @@
 # Getting Started with Create React App
 
+React web app giving users the ability to create their own NFT portfolio using any Ethereum wallet.
+
+# Getting Started with Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
