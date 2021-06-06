@@ -18,7 +18,7 @@ const NFT = ({ contract, id, tokenname, tokensymbol, dragHandler, url }) => {
                 <img
                     draggable="false"
                     src={url}
-                    alt={id}
+                    alt={tokensymbol + ": " + id}
                     style={{width:'150px', height:'150px'}}
                 />
             </div>

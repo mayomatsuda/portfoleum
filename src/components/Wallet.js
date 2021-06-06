@@ -1,4 +1,5 @@
 const Wallet = async ({ address }) => {
+
     var Web3 = require('web3');
     // var apiUrl = "https://mainnet.infura.io/v3/a7baf100c77848de8fd81fec9c2a0033";
     // var web3 = new Web3(apiUrl);
@@ -106,11 +107,12 @@ const Wallet = async ({ address }) => {
 
     function isIn(x) {
         for (var element in from) {
-            if (x['tokenID'] != from[element]['tokenID']) continue;
+            if (x['tokenID'] !== from[element]['tokenID']) continue;
             else return false;
         }
         return true;
     }
+
     return await (to.filter(x => isIn(x)));
     // return await verifyToTransactions(cryptoKitties);
 }

@@ -20,14 +20,15 @@ const MyNFTs = ({ thisNftList, dragHandler }) => {
             if (nftList[i] !== undefined) {
                 var thisUrl = openseaApiUrl + nftList[i]['contractAddress'] + "/" + nftList[i]['tokenID']
                 $.getJSON(thisUrl, function (data) {
-                    try {
+                    var newList = [...nftList]
+                    newList[i]['imageUrl'] = data['image_url']
+                    updateList(newList)
+                })
+                    .fail(function () {
+                        console.log("Could not load image.");
                         var newList = [...nftList]
-                        newList[i]['imageUrl'] = data['image_url']
                         updateList(newList)
-                    }
-                    catch { console.log("Caught error") }
-                    if (i === nftList.length - 1) setLoaded(false)
-                });
+                    });
             }
             await timer(1000)
         }
@@ -53,7 +54,7 @@ const MyNFTs = ({ thisNftList, dragHandler }) => {
 
     const nextpage = (e) => {
         e.preventDefault()
-        if (!(list1.slice(index1, index2).length + list2.slice(index1, index2).length < 8)) {
+        if (list1.slice(index1 + 4, index2 + 4).length + list2.slice(index1 + 4, index2 + 4).length > 0) {
             setIndex1(index1 + 4);
             setIndex2(index2 + 4);
         }
@@ -74,10 +75,10 @@ const MyNFTs = ({ thisNftList, dragHandler }) => {
             <h1>My NFTs</h1>
             {loaded === false ? (
                 <>
-                    Loading {nftList.length} NFTs<br/><br/>
+                    Loading {nftList.length} NFTs<br /><br />
                     <ClipLoader size={50} />
                 </>
-                
+
             ) : (
                 <>
                     <div className='col'>

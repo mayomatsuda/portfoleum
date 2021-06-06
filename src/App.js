@@ -5,8 +5,14 @@ import { useState } from 'react'
 import { useRef } from 'react'
 import MyPortfolio from './components/MyPortfolio';
 import MyNFTs from './components/MyNFTs';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+var checkURL = false;
 
 function App() {
+
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
 
   const [nftList, setNFTs] = useState([])
   const [portfolioValues, setPortfolio] = useState([[undefined, undefined, undefined, undefined], [undefined, undefined, undefined, undefined], [undefined, undefined, undefined, undefined], [undefined, undefined, undefined, undefined], [undefined, undefined, undefined, undefined], [undefined, undefined, undefined, undefined]])
@@ -14,16 +20,31 @@ function App() {
   const squareRef = useRef(currentSquare);
   squareRef.current = currentSquare;
 
+  function getUrlAddress() {
+    return urlParams.get('address');
+  }
+
   // Add NFT to portfolio
   const addNFT = (newNFT, squareX, squareY) => {
     const newPortfolio = [...portfolioValues]
     newPortfolio[squareX][squareY] = newNFT
     setPortfolio(newPortfolio)
+    setCurrentSquare([undefined, undefined])
   }
 
   // Add wallet
   const updateWallet = async (address) => {
+    checkURL = true
+    urlParams.append('address', address['address'])
+    window.location.search = urlParams;
     setNFTs(await Wallet(address))
+  }
+
+  // Add wallet
+  async function updateWalletFromURL(address) {
+    console.log("THIS ONE")
+    if (nftList.length > 0) checkURL = true
+    setNFTs(await Wallet(address={address}))
   }
 
   // Handle dragging
@@ -55,7 +76,12 @@ function App() {
 
   };
 
+  if (getUrlAddress() !== null && checkURL === false) {
+    updateWalletFromURL(getUrlAddress())
+  }
+
   return (
+    <Router>
     <div className="App">
       {
         nftList.length === 0 ? (
@@ -77,6 +103,7 @@ function App() {
         )
       }
     </div>
+    </Router>
   );
 }
 
