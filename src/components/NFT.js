@@ -1,8 +1,4 @@
 import Draggable from 'react-draggable';
-import { useState } from 'react'
-
-const cheerio = require('cheerio')
-const request = require('request')
 
 const NFT = ({ contract, id, tokenname, tokensymbol, dragHandler, url }) => {
 

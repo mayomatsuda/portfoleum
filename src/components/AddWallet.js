@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 // 0x0c34322840f8ea10dc0f88a948a4a7bbf4d5c6ed
 // 0x32262672C6D1B814019f4Ca4e2fc53285a919704
@@ -16,14 +15,21 @@ const AddTask = ({ onAdd }) => {
     }
 
     return (
-        <form className='add-form' onSubmit={onSubmit}>
-            <div className='form-control'>
-                <label>Add Wallet</label>
-                <input type ='text' placeholder='Wallet address' value={address} onChange={(e) => setAddress(e.target.value)} />
-            </div>
+        <div>
+            <h1 style={{ color:"#304C9D" }}>Portfoleum</h1>
+            <br />
+            <form className='add-form' onSubmit={onSubmit}>
+                <div className='form-control'>
+                    <label>Add Wallet</label>
+                    <input type ='text' placeholder='Wallet address' value={address} onChange={(e) => setAddress(e.target.value)} />
+                </div>
 
-            <input type='submit' value='Submit' className='btn btn-block'/>
-        </form>
+                <input type='submit' value='Submit' className='btn btn-block'/>
+            </form><br /><br />
+            <label style={{ fontSize: "14px", color:"gray" }}>Want to check it out? Try these wallets:</label><br />
+            <a href="/?address=0x0c34322840f8ea10dc0f88a948a4a7bbf4d5c6ed" style={{ fontSize: "12px", color:"gray" }}>0x0c34322840f8ea10dc0f88a948a4a7bbf4d5c6ed</a><br />
+            <a href="/?address=0x32262672C6D1B814019f4Ca4e2fc53285a919704" style={{ fontSize: "12px", color:"gray" }}>0x32262672C6D1B814019f4Ca4e2fc53285a919704</a>
+        </div>
     )
 }
 

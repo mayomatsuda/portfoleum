@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { useRef } from 'react'
 import MyPortfolio from './components/MyPortfolio';
 import MyNFTs from './components/MyNFTs';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 var checkURL = false;
 
@@ -34,15 +34,13 @@ function App() {
 
   // Add wallet
   const updateWallet = async (address) => {
-    checkURL = true
-    urlParams.append('address', address['address'])
-    window.location.search = urlParams;
+    // urlParams.set('address', address['address'])
+    // window.location.search = urlParams;
     setNFTs(await Wallet(address))
   }
 
   // Add wallet
   async function updateWalletFromURL(address) {
-    console.log("THIS ONE")
     if (nftList.length > 0) checkURL = true
     setNFTs(await Wallet(address={address}))
   }
@@ -85,7 +83,9 @@ function App() {
     <div className="App">
       {
         nftList.length === 0 ? (
+          <>
           <AddWallet onAdd={updateWallet} />
+          </>
         ) : (
           <div className='rowC'>
             <div className='myportfolio'>

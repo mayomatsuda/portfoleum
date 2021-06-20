@@ -1,6 +1,6 @@
 import NFT from "./NFT"
 import { useState } from 'react'
-import $, { getJSON, timers } from 'jquery'
+import $ from 'jquery'
 import ClipLoader from "react-spinners/ClipLoader";
 
 var started = false;
@@ -15,23 +15,30 @@ const MyNFTs = ({ thisNftList, dragHandler }) => {
     const timer = ms => new Promise(res => setTimeout(res, ms))
 
     async function getImages() {
+        var newList = [...nftList]
+        var images = []
         for (var i = 0; i < nftList.length; i++) {
             k++;
             if (nftList[i] !== undefined) {
                 var thisUrl = openseaApiUrl + nftList[i]['contractAddress'] + "/" + nftList[i]['tokenID']
                 $.getJSON(thisUrl, function (data) {
-                    var newList = [...nftList]
-                    newList[i]['imageUrl'] = data['image_url']
+                    try { newList[i]['imageUrl'] = data['image_url'] }
+                    catch { console.log("Undefined error") }
+                    images.push(data['image_url'])
                     updateList(newList)
                 })
-                    .fail(function () {
-                        console.log("Could not load image.");
-                        var newList = [...nftList]
-                        updateList(newList)
-                    });
+                .fail(function () {
+                    console.log("Could not load image.");
+                });
             }
             await timer(1000)
         }
+        var newList = [...nftList]
+        for (var i = 0; i < newList.length; i++)
+        {
+            newList[i]['imageUrl'] = images[i];
+        }
+        split()
     }
 
     if (started === false) {
@@ -45,7 +52,7 @@ const MyNFTs = ({ thisNftList, dragHandler }) => {
     const [index2, setIndex2] = useState(4);
 
     function split() {
-        if (k === nftList.length - 1 && loaded === false) setLoaded(true)
+        if (k >= nftList.length - 1 && loaded === false) setLoaded(true)
         for (var i = 0; i < nftList.length; i++) {
             if (i % 2 === 0) list1.push(nftList[i]);
             else list2.push(nftList[i]);
@@ -69,6 +76,7 @@ const MyNFTs = ({ thisNftList, dragHandler }) => {
     }
 
     split()
+    console.log(loaded)
 
     return (
         <div>

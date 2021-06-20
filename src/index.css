@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 * {
   box-sizing: border-box;
@@ -7,24 +8,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-}
-
-.container {
-  max-width: 500px;
-  margin: 30px auto;
-  overflow: auto;
-  min-height: 300px;
-  border: 1px solid steelblue;
-  padding: 30px;
-  border-radius: 5px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .btn {
@@ -52,23 +36,6 @@ body {
 .btn-block {
   display: block;
   width: 100%;
-}
-
-.task {
-  background: #f4f4f4;
-  margin: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.task.reminder {
-  border-left: 5px solid green;
-}
-
-.task h3 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .add-form {
@@ -107,11 +74,6 @@ body {
   height: 20px;
 }
 
-footer {
-  margin-top: 30px;
-  text-align: center;
-}
-
 .myportfolio {
   width: 65%;
   margin-left: 30px;
@@ -130,8 +92,6 @@ footer {
 .nft {
   width: 150px;
   height: 150px;
-  /* cursor: pointer; */
-  /* background: rgb(255, 255, 255); */
 }
 
 .nftcols {
