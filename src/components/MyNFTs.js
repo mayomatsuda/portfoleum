@@ -6,7 +6,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 var started = false;
 var k = 0;
 
-const MyNFTs = ({ thisNftList, dragHandler }) => {
+const MyNFTs = ({ thisNftList, dragHandler, rightClickHandler }) => {
 
     var openseaApiUrl = "https://api.opensea.io/api/v1/asset/";
     const [nftList, updateList] = useState([...thisNftList])
@@ -98,6 +98,7 @@ const MyNFTs = ({ thisNftList, dragHandler }) => {
                                 tokensymbol={nft['tokenSymbol']}
                                 url={nft['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
                             />
                         ))}
                     </div>
@@ -110,6 +111,7 @@ const MyNFTs = ({ thisNftList, dragHandler }) => {
                                 tokensymbol={nft['tokenSymbol']}
                                 url={nft['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
                             />
                         ))}
                     </div>

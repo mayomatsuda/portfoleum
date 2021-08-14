@@ -3,7 +3,7 @@ import NFT from './NFT';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf'
 
-const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLeaveHandler }) => {
+const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLeaveHandler, rightClickHandler }) => {
 
     function screenshot(e){
         e.preventDefault()
@@ -36,6 +36,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[0][0]['tokensymbol']}
                                 url={portfolioValues[0][0]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={0}
+                                y={0}
                             />
                         )}
                     </div>
@@ -50,6 +53,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[0][1]['tokensymbol']}
                                 url={portfolioValues[0][1]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={0}
+                                y={1}
                             />
                         )}
                     </div>
@@ -64,6 +70,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[0][2]['tokensymbol']}
                                 url={portfolioValues[0][2]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={0}
+                                y={2}
                             />
                         )}
                     </div>
@@ -78,6 +87,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[0][3]['tokensymbol']}
                                 url={portfolioValues[0][3]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={0}
+                                y={3}
                             />
                         )}
                     </div>
@@ -92,6 +104,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[0][4]['tokensymbol']}
                                 url={portfolioValues[0][4]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={0}
+                                y={4}
                             />
                         )}
                     </div>
@@ -106,6 +121,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[0][5]['tokensymbol']}
                                 url={portfolioValues[0][5]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={0}
+                                y={5}
                             />
                         )}
                     </div>
@@ -123,6 +141,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[1][0]['tokensymbol']}
                                 url={portfolioValues[1][0]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={1}
+                                y={0}
                             />
                         )}
                     </div>
@@ -137,6 +158,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[1][1]['tokensymbol']}
                                 url={portfolioValues[1][1]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={1}
+                                y={1}
                             />
                         )}
                     </div>
@@ -151,6 +175,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[1][2]['tokensymbol']}
                                 url={portfolioValues[1][2]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={1}
+                                y={2}
                             />
                         )}
                     </div>
@@ -165,6 +192,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[1][3]['tokensymbol']}
                                 url={portfolioValues[1][3]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={1}
+                                y={3}
                             />
                         )}
                     </div>
@@ -179,6 +209,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[1][4]['tokensymbol']}
                                 url={portfolioValues[1][4]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={1}
+                                y={4}
                             />
                         )}
                     </div>
@@ -193,6 +226,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[1][5]['tokensymbol']}
                                 url={portfolioValues[1][5]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={1}
+                                y={5}
                             />
                         )}
                     </div>
@@ -210,6 +246,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[2][0]['tokensymbol']}
                                 url={portfolioValues[2][0]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={2}
+                                y={0}
                             />
                         )}
                     </div>
@@ -224,6 +263,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[2][1]['tokensymbol']}
                                 url={portfolioValues[2][1]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={2}
+                                y={1}
                             />
                         )}
                     </div>
@@ -238,6 +280,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[2][2]['tokensymbol']}
                                 url={portfolioValues[2][2]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={2}
+                                y={2}
                             />
                         )}
                     </div>
@@ -252,6 +297,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[2][3]['tokensymbol']}
                                 url={portfolioValues[2][3]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={2}
+                                y={3}
                             />
                         )}
                     </div>
@@ -266,6 +314,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[2][4]['tokensymbol']}
                                 url={portfolioValues[2][4]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={2}
+                                y={4}
                             />
                         )}
                     </div>
@@ -280,6 +331,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 tokensymbol={portfolioValues[2][5]['tokensymbol']}
                                 url={portfolioValues[2][5]['imageUrl']}
                                 dragHandler={dragHandler}
+                                rightClickHandler={rightClickHandler}
+                                x={2}
+                                y={5}
                             />
                         )}
                     </div>
@@ -298,6 +352,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                     tokensymbol={portfolioValues[3][0]['tokensymbol']}
                                     url={portfolioValues[3][0]['imageUrl']}
                                     dragHandler={dragHandler}
+                                    rightClickHandler={rightClickHandler}
+                                    x={3}
+                                    y={0}
                                 />
                             )}
                         </div>
@@ -314,6 +371,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                     tokensymbol={portfolioValues[3][1]['tokensymbol']}
                                     url={portfolioValues[3][1]['imageUrl']}
                                     dragHandler={dragHandler}
+                                    rightClickHandler={rightClickHandler}
+                                    x={3}
+                                    y={1}
                                 />
                             )}
                         </div>
@@ -330,6 +390,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                     tokensymbol={portfolioValues[3][2]['tokensymbol']}
                                     url={portfolioValues[3][2]['imageUrl']}
                                     dragHandler={dragHandler}
+                                    rightClickHandler={rightClickHandler}
+                                    x={3}
+                                    y={2}
                                 />
                             )}
                         </div>
@@ -346,6 +409,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                     tokensymbol={portfolioValues[3][3]['tokensymbol']}
                                     url={portfolioValues[3][3]['imageUrl']}
                                     dragHandler={dragHandler}
+                                    rightClickHandler={rightClickHandler}
+                                    x={3}
+                                    y={3}
                                 />
                             )}
                         </div>
@@ -362,6 +428,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                     tokensymbol={portfolioValues[3][4]['tokensymbol']}
                                     url={portfolioValues[3][4]['imageUrl']}
                                     dragHandler={dragHandler}
+                                    rightClickHandler={rightClickHandler}
+                                    x={3}
+                                    y={4}
                                 />
                             )}
                         </div>
@@ -378,6 +447,9 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                     tokensymbol={portfolioValues[3][5]['tokensymbol']}
                                     url={portfolioValues[3][5]['imageUrl']}
                                     dragHandler={dragHandler}
+                                    rightClickHandler={rightClickHandler}
+                                    x={3}
+                                    y={5}
                                 />
                             )}
                         </div>
@@ -387,6 +459,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
             <form onSubmit={screenshot}>
                 <input type='submit' value='Export' className='btn' />
             </form>
+            <label style={{ fontSize: "14px", color:"gray" }}>Drag NFTs to an empty square for display. Right-click an NFT to hide it.</label><br />
         </div>
     )
 }

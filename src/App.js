@@ -74,6 +74,20 @@ function App() {
 
   };
 
+  // Deisable default right-click behaviour
+  document.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+  });
+
+  // Hide NFTs upon right-click
+  const rightClick = (x, y) => {
+    if (x !== undefined && y !== undefined) {
+      const newPortfolio = portfolioValues
+      newPortfolio[x][y] = undefined
+      setPortfolio(newPortfolio)
+    }
+  }
+
   if (getUrlAddress() !== null && checkURL === false) {
     updateWalletFromURL(getUrlAddress())
   }
@@ -83,9 +97,9 @@ function App() {
     <div className="App">
       {
         nftList.length === 0 ? (
-          <>
+          <div className='homecontainer'>
           <AddWallet onAdd={updateWallet} />
-          </>
+          </div>
         ) : (
           <div className='rowC'>
             <div className='myportfolio'>
@@ -94,10 +108,11 @@ function App() {
                 dragHandler={noDrag}
                 mouseEnterHandler={mouseEnterHandler}
                 mouseLeaveHandler={mouseLeaveHandler}
+                rightClickHandler={rightClick}
               />
             </div>
             <div className='mynfts'>
-              <MyNFTs thisNftList={nftList} dragHandler={dragHandler} />
+              <MyNFTs thisNftList={nftList} dragHandler={dragHandler} rightClickHandler={rightClick} />
             </div>
           </div>
         )
