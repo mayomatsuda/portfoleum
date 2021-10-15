@@ -76,7 +76,6 @@ const MyNFTs = ({ thisNftList, dragHandler, rightClickHandler }) => {
     }
 
     split()
-    console.log(loaded)
 
     return (
         <div>
