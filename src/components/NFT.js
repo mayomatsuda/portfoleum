@@ -1,6 +1,6 @@
 import Draggable from 'react-draggable';
 
-const NFT = ({ contract, id, tokenname, tokensymbol, dragHandler, url, rightClickHandler, x, y, height='150px', width='150px', pos='def' }) => {
+const NFT = ({ contract, id, tokenname, tokensymbol, dragHandler, url, rightClickHandler, x, y, height='150px', width='150px', pos='def', locked=false }) => {
 
     const dragHandlerHere = (e, data) => {
         dragHandler(e, data, contract, id, tokenname, tokensymbol, url)
