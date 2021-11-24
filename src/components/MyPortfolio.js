@@ -41,6 +41,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={0}
                                 y={0}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -60,6 +61,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={0}
                                 y={1}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -79,6 +81,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={0}
                                 y={2}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -98,6 +101,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={0}
                                 y={3}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -117,6 +121,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={0}
                                 y={4}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -136,6 +141,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={0}
                                 y={5}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -158,6 +164,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={1}
                                 y={0}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -177,6 +184,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={1}
                                 y={1}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -196,6 +204,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={1}
                                 y={2}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -215,6 +224,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={1}
                                 y={3}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -234,6 +244,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={1}
                                 y={4}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -253,6 +264,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={1}
                                 y={5}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -275,6 +287,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={2}
                                 y={0}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -294,6 +307,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={2}
                                 y={1}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -313,6 +327,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={2}
                                 y={2}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -332,6 +347,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={2}
                                 y={3}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -351,6 +367,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={2}
                                 y={4}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -370,6 +387,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                 rightClickHandler={rightClickHandler}
                                 x={2}
                                 y={5}
+                                mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                             />
                         )}
                     </div>
@@ -393,6 +411,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                     rightClickHandler={rightClickHandler}
                                     x={3}
                                     y={0}
+                                    mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                                 />
                             )}
                         </div>
@@ -414,6 +433,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                     rightClickHandler={rightClickHandler}
                                     x={3}
                                     y={1}
+                                    mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                                 />
                             )}
                         </div>
@@ -435,6 +455,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                     rightClickHandler={rightClickHandler}
                                     x={3}
                                     y={2}
+                                    mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                                 />
                             )}
                         </div>
@@ -456,6 +477,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                     rightClickHandler={rightClickHandler}
                                     x={3}
                                     y={3}
+                                    mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                                 />
                             )}
                         </div>
@@ -477,6 +499,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                     rightClickHandler={rightClickHandler}
                                     x={3}
                                     y={4}
+                                    mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                                 />
                             )}
                         </div>
@@ -498,6 +521,7 @@ const MyPortfolio = ({ portfolioValues, dragHandler, mouseEnterHandler, mouseLea
                                     rightClickHandler={rightClickHandler}
                                     x={3}
                                     y={5}
+                                    mouseEnterHandler={mouseEnterHandler} mouseLeaveHandler={mouseLeaveHandler}
                                 />
                             )}
                         </div>

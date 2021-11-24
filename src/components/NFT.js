@@ -1,6 +1,6 @@
 import Draggable from 'react-draggable';
 
-const NFT = ({ contract, id, tokenname, tokensymbol, dragHandler, url, rightClickHandler, x, y, height='150px', width='150px', pos='def', locked=false }) => {
+const NFT = ({ contract, id, tokenname, tokensymbol, dragHandler, url, rightClickHandler, x, y, height='150px', width='150px', pos='def', locked=false, mouseEnterHandler, mouseLeaveHandler }) => {
 
     const dragHandlerHere = (e, data) => {
         dragHandler(e, data, contract, id, tokenname, tokensymbol, url)
@@ -39,7 +39,12 @@ const NFT = ({ contract, id, tokenname, tokensymbol, dragHandler, url, rightClic
 
     return (
         <Draggable onStop={dragHandlerHere} position={{x: 0, y: 0}}>
-            <div className='nft' onContextMenu={rightClickHandlerHere} style={{width:'150px',height:'150px',overflow:'hidden'}}>
+            <div className='nft'
+                onContextMenu={rightClickHandlerHere}
+                style={{width:'150px',height:'150px',overflow:'hidden'}}
+                onMouseEnter={mouseEnterHandler !== undefined ? () => mouseEnterHandler(x, y) : undefined}
+                onMouseLeave={mouseLeaveHandler !== undefined ? () => mouseLeaveHandler(x, y) : undefined}
+            >
                 <img
                     draggable="false"
                     src={url}

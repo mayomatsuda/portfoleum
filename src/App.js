@@ -34,21 +34,24 @@ function App() {
   const addNFT = (newNFT, squareX, squareY, check=true, adjOnly=false) => {
     const newPortfolio = [...portfolioValues]
     var pos;
+    var place = true;
     if (check && adjOnly) {
       pos = checkAdjacent(squareX, squareY, newNFT)
       if (pos !== undefined) {
         newNFT['locked'] = true
         newNFT['group'] = groupID
-        console.log(groupID - 1)
       } else {
-        newNFT['locked'] = false
+        // don't place it
+        place = false;
       }
       newNFT['pos'] = pos
     }
     // If only checking for adjacent cells, but not returning an adjacent cell
-    newPortfolio[squareX][squareY] = newNFT
-    setPortfolio(newPortfolio)
-    setCurrentSquare([undefined, undefined])
+    if (place) {
+      newPortfolio[squareX][squareY] = newNFT
+      setPortfolio(newPortfolio)
+      setCurrentSquare([undefined, undefined])
+    }
   }
 
   const checkAdjacent = (x, y, nft) => {
@@ -181,7 +184,8 @@ function App() {
       'id': id,
       'tokenname': tokenname,
       'tokensymbol': tokensymbol,
-      'imageUrl': url
+      'imageUrl': url,
+      'group': "ungrouped"
     }
     setTimeout(() => {
       if (squareRef.current[0] !== undefined) {
@@ -190,12 +194,14 @@ function App() {
     }, 50);
   };
 
-  const mouseEnterHandler = (x, y) => {
+  const mouseEnterHandler = (x, y) => {    
     setCurrentSquare([x, y])
+    console.log(currentSquare)
   };
 
   const mouseLeaveHandler = (x, y) => {
     setCurrentSquare([undefined, undefined])
+    console.log(currentSquare)
   };
 
   const noDrag = (e, data, contract, id, tokenname, tokensymbol, url) => {
@@ -225,8 +231,10 @@ function App() {
       // Delete all with matching groupID if groupID is defined
       for (var i = 0; i < newPortfolio.length; i++) { 
         for (var j = 0; j < newPortfolio[i].length; j++) {
-          if (i == x && j == y) continue
-          if (newPortfolio[i][j] !== undefined && newPortfolio[i][j]['group'] == newPortfolio[x][y]['group']) newPortfolio[i][j] = undefined
+          if (i === x && j === y) continue
+          if (newPortfolio[i][j] !== undefined) {
+             if (newPortfolio[i][j]['group'] !== "ungrouped" && newPortfolio[i][j]['group'] === newPortfolio[x][y]['group']) newPortfolio[i][j] = undefined
+          }
         }
       }
       newPortfolio[x][y] = undefined

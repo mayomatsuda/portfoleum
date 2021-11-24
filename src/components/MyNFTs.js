@@ -4,6 +4,7 @@ import $ from 'jquery'
 import ClipLoader from "react-spinners/ClipLoader";
 
 var started = false;
+var buffer = 250;
 var k = 0;
 
 const MyNFTs = ({ thisNftList, dragHandler, rightClickHandler }) => {
@@ -31,7 +32,7 @@ const MyNFTs = ({ thisNftList, dragHandler, rightClickHandler }) => {
                     console.log("Could not load image.");
                 });
             }
-            await timer(1000)
+            await timer(buffer)
         }
         var newList = [...nftList]
         for (var i = 0; i < newList.length; i++)
