@@ -64,6 +64,8 @@ function App() {
       //expanding down (x + 1) and left (y - 1)
       if (id === adjId && tk === adjTk && adjLocked != true)
       {
+        // If it would go over an existing NFT, do not allow
+        if (portfolioValues[x][y + 1] !== undefined || portfolioValues[x - 1][y] !== undefined) return undefined;
         var tlnft = Object.assign({}, nft)
         var brnft = Object.assign({}, nft)
         var trnft = Object.assign({}, nft)
@@ -90,6 +92,8 @@ function App() {
       //expanding up (x - 1) and right (y + 1)
       if (id === adjId && tk === adjTk && adjLocked != true)
       {
+        // If it would go over an existing NFT, do not allow
+        if (portfolioValues[x][y - 1] !== undefined || portfolioValues[x + 1][y] !== undefined) return undefined;
         var tlnft = Object.assign({}, nft)
         var brnft = Object.assign({}, nft)
         var blnft = Object.assign({}, nft)
@@ -116,6 +120,8 @@ function App() {
       //expanding down (x + 1) and right (y + 1)
       if (id === adjId && tk === adjTk && adjLocked != true)
       {
+        // If it would go over an existing NFT, do not allow
+        if (portfolioValues[x][y - 1] !== undefined || portfolioValues[x - 1][y] !== undefined) return undefined;
         var trnft = Object.assign({}, nft)
         var tlnft = Object.assign({}, nft)
         var blnft = Object.assign({}, nft)
@@ -142,6 +148,8 @@ function App() {
       //expanding up (x - 1) and left (y - 1)
       if (id === adjId && tk === adjTk && adjLocked != true)
       {
+        // If it would go over an existing NFT, do not allow
+        if (portfolioValues[x][y + 1] !== undefined || portfolioValues[x + 1][y] !== undefined) return undefined;
         var trnft = Object.assign({}, nft)
         var brnft = Object.assign({}, nft)
         var blnft = Object.assign({}, nft)
@@ -189,7 +197,10 @@ function App() {
     }
     setTimeout(() => {
       if (squareRef.current[0] !== undefined) {
-        addNFT(nft, squareRef.current[0], squareRef.current[1])
+        // If there's not already an NFT there
+        if (portfolioValues[squareRef.current[0]][squareRef.current[1]] === undefined) {
+          addNFT(nft, squareRef.current[0], squareRef.current[1])
+        }
       }
     }, 50);
   };
@@ -214,7 +225,10 @@ function App() {
     }
     setTimeout(() => {
       if (squareRef.current[0] !== undefined) {
-        addNFT(nft, squareRef.current[0], squareRef.current[1], true, true)
+        // If there's not already an NFT there
+        if (portfolioValues[squareRef.current[0]][squareRef.current[1]] === undefined) {
+          addNFT(nft, squareRef.current[0], squareRef.current[1], true, true)
+        }
       }
     }, 50);
   };
