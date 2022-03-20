@@ -1,13 +1,14 @@
 import './App.css';
 import AddWallet from './components/AddWallet'
 import Wallet from './components/Wallet'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRef } from 'react'
 import MyPortfolio from './components/MyPortfolio';
 import MyNFTs from './components/MyNFTs';
 import { BrowserRouter as Router } from 'react-router-dom'
 
 var checkURL = false;
+let userAgent = navigator.userAgent;
 
 function App() {
 
@@ -25,10 +26,18 @@ function App() {
   squareRef.current = currentSquare;
 
   const [groupID, setGroupID] = useState(0)
+  const [firefox, usingFirefox] = useState(false)
 
   function getUrlAddress() {
     return urlParams.get('address');
   }
+
+  useEffect(() => {
+    if(userAgent.match(/firefox|fxios/i)) {
+      usingFirefox(true)
+    }
+  }, []);
+
 
   // Add NFT to portfolio
   const addNFT = (newNFT, squareX, squareY, check=true, adjOnly=false) => {
@@ -207,12 +216,10 @@ function App() {
 
   const mouseEnterHandler = (x, y) => {    
     setCurrentSquare([x, y])
-    console.log(currentSquare)
   };
 
   const mouseLeaveHandler = (x, y) => {
     setCurrentSquare([undefined, undefined])
-    console.log(currentSquare)
   };
 
   const noDrag = (e, data, contract, id, tokenname, tokensymbol, url) => {
@@ -266,7 +273,7 @@ function App() {
       {
         nftList.length === 0 ? (
           <div className='homecontainer'>
-          <AddWallet onAdd={updateWallet} />
+          <AddWallet onAdd={updateWallet} firefox={firefox} />
           </div>
         ) : (
           <div className='rowC'>

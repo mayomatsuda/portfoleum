@@ -1,5 +1,7 @@
 const Wallet = async ({ address }) => {
-    var url = `https://api.etherscan.io/api?module=account&action=tokennfttx&address=${address}&startblock=0&endblock=999999999&sort=asc&apikey=Y79P7CN6NZIP6JPNU4MVFQQDIXF1F8FNIW`
+    var apikey = process.env.REACT_APP_ETHERSCAN_API_KEY;
+    console.log(apikey)
+    var url = `https://api.etherscan.io/api?module=account&action=tokennfttx&address=${address}&startblock=0&endblock=999999999&sort=asc&apikey=${apikey}`
     var data;
 
     async function fetchAsync() {
