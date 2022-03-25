@@ -7,8 +7,6 @@ import { useState } from 'react'
 const AddTask = ({ onAdd, firefox }) => {
     const [address, setAddress] = useState('')
 
-    console.log(firefox)
-
     const onSubmit = (e) => {
         e.preventDefault()
         if(!address) return
